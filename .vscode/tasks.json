@@ -1,0 +1,38 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build",
+            "type": "shell",
+            "command": "cube-cmake",
+            "args": [
+                "--build",
+                "D:/WorkSpace/CAST/game/Arduboy3DGame/build/Debug",
+                "--"
+            ],
+            "group": {
+                "kind": "build",
+            }
+        },
+        { 
+            "label": "download",
+            "type": "shell",
+            "command": "openocd",
+            "args": [
+                "-f",
+                "interface/stlink-v2.cfg",
+                "-f",
+                "target/stm32f4x.cfg",
+                "-c",
+                "program build/Debug/Arduboy3DGame.elf verify reset exit",
+                "-c",
+                "adapter speed 2000"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": []
+        }
+    ]
+}
