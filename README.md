@@ -8,7 +8,7 @@
 
 打开终端后输入下面命令： 
 编译：  
-`cube-cmake --build D:/WorkSpace/CAST/game/Arduboy3DGame/build/Debug --`  
+`cube-cmake --build ./build/Debug --`  
 烧录：  
 `openocd -f interface/stlink-v2.cfg -f target/stm32f4x.cfg -c 'program build/Debug/Arduboy3DGame.elf verify reset exit' -c 'adapter speed 2000'`  
 
